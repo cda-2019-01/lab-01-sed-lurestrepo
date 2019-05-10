@@ -14,7 +14,7 @@ sed 's/,/./4' out.5 > out.6 #remplaza la ,  los decimales de la ultima columna.
 sed 's/,N/\,\\N/g' out.6 > out.7 #cambia las N por \N
 sed 's/,,/\,\\N,/g' out.7>out.8 #cambia las ,, por ,\N,
 sed 's/,$/,\\N/g' out.8>out.9 #los nulos al final de la cadena cambiar por ,\N
-tr '[:lower:]'  '[:upper:]' < out.9 > out.10
+tr '[:lower:]'  '[:upper:]' < out.9 > out.10 # convierte mayusculas en minusculas del out.9 al out.10
 grep -v \\N out.10 > out.11 #Extraiga los registros que no tienen campos nulos.
 cat out.11 #muestre el archivo final   
 rm out.* #elimina los archivos temporales
